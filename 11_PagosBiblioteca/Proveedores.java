@@ -1,79 +1,109 @@
-/*
-1- 20
-Suma de los cotos de la biblioteca
-Costo mayor
-Costo menor
-costro promedio
-costo total de los productos (libros)
-*/
+/ *
+class libro con los libros que tu quieras
+* /
+importar  java.util. * ;
+// importar java.swing. *;
+import  java.lang.Math ;
+import  javax.swing.JOptionPane ;
 
+ clase  pública Proveedores  amplía  Libros {
+    private  String nombre_cliente;
+    Private  String producto [] =  new  String [ 10 ];
+     int privado costo [] =  nuevo  int [ 10 ];
+    privado  int producto_existente [] =  nuevo  int [ 10 ];
+    int sumatotal;
+    Entrada del escáner =  nuevo  escáner ( System . In);
+    // menú
+     menuproveedores public void  () {
+        Texto de cadena ;
+        int opcion = 0 ;
+        prueba {
+            // es para ingresar texto
+            texto =  JOptionPane . showInputDialog ( " Seleccione la función deseada "
+                                            +  " \ n 1.-Suma total de costos "
+                                            +  " \ n 2.-Costo mayor "
+                                            +  " \ n 3.-Costo menor "
+                                            +  " \ n 4.-Costo promedio "
+                                            +  " \ n 5.-Costo total del producto " );
+                    // cuando se utiliza JOptionPane solo se reciben cadenas
+                    // voy a convertir esa cadena en un entero
+                    opcion =  Entero . parseInt (texto);
 
-import java.util.*;
-import javax.swing.*;
-import java.lang.Math;
+        } captura ( Excepción e) {
+            JOptionPane . showMessageDialog ( null , " Para acceder a un programa solo se puede ingresar los números del 1 al 3 " );
+            // vamos a obtener el error, es visible para el usuario
+            JOptionPane . showMessageDialog ( nulo , " Efe " + e . getMessage ());
+            // si solo queremos imprimir el error en consola
+            Sistema . fuera . println ( " El error es: efe "  + e . getMessage ());
 
-
-public class Proveedores(){
-
-    private String nombre_cliente;
-    private String producto[] = new String[10];
-    private int costo[] = new int[10];
-    private int producto_existente[] = new int[10];
-
-    //los metodos Getter Y Setter de cada variable
-
-
-    //menu
-
-    public void MenuProveedores(){
-
-        String text;
-        //try catch para el manejo de errores
-        // un ciclo do while para repetir las opciones
-        text = JOptionPane.showInputDialog("Seleccione la funcion deseada: "
-                                            + "\n 1.- Suma total de costos"
-                                            + "\n 2.- Costo Mayor"
-                                            + "\n 3.- Costo Menor"
-                                            + "\n 4.- Costo Promedio"
-                                            + "\n 5.- Costo Total del Producto");
-                                            
-        /*
-        
-        De los libros que se crearon deberan de agregar la clase costo aplicando herencia
-        para que se pueda manejar el costo de cada libro
-        Libro drama = new Libro("La cumbre escarlata", "No me lo se", "12345-BN", 5, 44);
-        Libro fantasmas = new Libro("Las cronicas Mutantes", "No me lo se", "00345-BN", 3, 608);
-        Si elijo la opcion 1 total del costo de la cumbre escarlata : 5*44
-        Si elijo la opcion 2 se debe de obtener cual es el libro que tiene mayor costo: Las cronicas mutantes con 608
-        Si eljijo la opcion 3 debe de salir el libro mas barato : la cumbre escarlata 44
-        Si elijo la opcion 4 se debe de sacar el promedio de los costos de los libros 
-        Si eljjo la opcion 5 : deben de multiplicar cantidad de libros los ejemplares * costo de cada uno 
-        
-        */
-
-        //aqui hay que agregar el menu de las opciones
-        int opcion;
-
-        switch (opcion) {
-            case 1:
-                SumaTotal();
-                break;
-            case 2:
-                CostoMayor();
-                break;
-            case 3:
-                CostoMenor();
-                break;
-            case 4:
-                CostoPromedio();
-                break;
-                CostoTotal();
-            case 5:
-                
-                break;
-        
-            default:
-                //un mensajito de gracias :3
-                break;
         }
+        hacer {
+        cambiar (opcion) {
+            caso  1 :
+                sumatotal ();
+                romper ;
+            caso  2 :
+                costomayor ();
+                romper ;
+            caso  3 :
+                costomenor ();
+                romper ;
+            caso  4 :
+                costopromedio ();
+                romper ;
+            caso  5 :
+                costototal ();
+                romper ;
+            por defecto :
+                Sistema . fuera . print ( " Opcion no disponible, adios. " );
+            romper ;
+        }
+        } while (opcion > 5 );
     }
+    
+    public  void  sumatotal () {
+        // libro uno + libro dos
+        Texto de cadena ;
+        int sumat;
+        Librouno cost =  new  Librouno ( " La Cumbre Escarlata " , " Nancy Holder " , " 12345-B " , " Terror, Ficcion gotica, Literatura fantástica. " , 5 , 500 );
+        costo . mostrarLibrouno ();
+        Librodos coste =  new  Librodos ( " Los pasos de López " , " Jorge Ibarguengoitia " , " 12345-A " , " Ficcion " , 6 , 200 );
+        coste . mostrarLibrodos ();
+
+        sumat = 200 + 500 ;
+        texto =  JOptionPane . showInputDialog ( " La información de los libros se ha mostrado en consola. \ n La suma del costo de los libros para la biblioteca es de: \ n Enter para continuar. "  + sumat);
+        // Librodos coste = new Librodos ("Los pasos de Lopez", "Jorge Ibarguengoitia", "12345-A", "Ficcion", 6, 200);
+        // coste.mostrarLibrodos ();
+    }
+    public  void  costomayor () {
+        Texto de cadena ;
+        texto =  JOptionPane . showInputDialog ( " El Libro con mayor precio se muestra en consola: \ n Enter para continuar " );
+        Sistema . fuera . println ( " Costo Mayor " );
+        Librouno cost =  new  Librouno ( " La Cumbre Escarlata " , " Nancy Holder " , " 12345-B " , " Terror, Ficcion gotica, Literatura fantástica. " , 5 , 500 );
+        costo . mostrarLibrouno ();
+    }
+     costomenor vacío  público () {
+        Texto de cadena ;
+        texto =  JOptionPane . showInputDialog ( " El libro con menor precio se muestra en consola: \ n Enter para continuar. " );
+        Sistema . fuera . println ( " Costo Menor \ n " );
+        Librodos coste =  new  Librodos ( " Los pasos de López " , " Jorge Ibarguengoitia " , " 12345-A " , " Ficcion " , 6 , 200 );
+        coste . mostrarLibrodos ();
+        
+    }
+     costopromedio vacío  público () {
+        Texto de cadena ;
+        int prom = ( 500 + 200 ) / 2 ;
+        texto = JOptionPane . showInputDialog ( " El costo promedio de los libros es: "  + prom +  " \ n Enter para continuar. " );
+    }
+    public  void  costototal () {
+        Texto de cadena ;
+        int costoTotal = ( 5 * 100 ) + ( 6 * 200 );
+        texto =  JOptionPane . showInputDialog ( " El costo total de todos los lobros y ejemplares es de: "  + costoTotal +  " \ n Enter para continuar. " );
+        Sistema . fuera . println ( " Estos son todos los libros disponibles: \ n " );
+        Librouno cost =  new  Librouno ( " La Cumbre Escarlata " , " Nancy Holder " , " 12345-B " , " Terror, Ficcion gotica, Literatura fantástica. " , 5 , 500 );
+        costo . mostrarLibrouno ();
+        Librodos coste =  new  Librodos ( " Los pasos de López " , " Jorge Ibarguengoitia " , " 12345-A " , " Ficcion " , 6 , 200 );
+        coste . mostrarLibrodos ();
+    }
+
+}
